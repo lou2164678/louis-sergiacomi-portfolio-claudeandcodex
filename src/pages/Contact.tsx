@@ -119,7 +119,7 @@ const Contact = () => {
                     Location
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Fountain Hills, Arizona, USA
+                    Tempe, Arizona, USA
                   </p>
                 </div>
               </div>
@@ -131,7 +131,7 @@ const Contact = () => {
               </h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://www.linkedin.com/in/louis-sergiacomi/"
+                  href="https://linkedin.com/in/louduko"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"

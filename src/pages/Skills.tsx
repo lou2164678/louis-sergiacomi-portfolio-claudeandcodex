@@ -1,30 +1,32 @@
 import { motion } from "framer-motion";
 
-// Skill data
+// Skill data based on LinkedIn profile and experience
 const skillsData = {
   sales: [
+    { name: "Sales Processes", level: 95 },
     { name: "B2B Sales", level: 95 },
-    { name: "Account Management", level: 90 },
-    { name: "Upselling/Cross-selling", level: 92 },
-    { name: "Pipeline Management", level: 88 },
-    { name: "Sales Process Optimization", level: 85 },
-    { name: "Client Relationship Management", level: 90 },
-    { name: "Sales Analytics", level: 85 },
-    { name: "Quota Achievement", level: 92 },
+    { name: "Account Management", level: 92 },
+    { name: "Upselling/Cross-selling", level: 94 },
+    { name: "Operations Management", level: 90 },
+    { name: "Client Relationship Management", level: 92 },
+    { name: "Territory Management", level: 88 },
+    { name: "Quota Achievement", level: 95 },
   ],
   technical: [
-    { name: "AI Integration", level: 85 },
-    { name: "SaaS Solutions", level: 80 },
-    { name: "CRM Systems", level: 90 },
-    { name: "Sales Technology", level: 85 },
-    { name: "Data Analysis", level: 80 },
+    { name: "Reasoning Skills", level: 90 },
+    { name: "Problem Solving", level: 92 },
+    { name: "Data Analysis", level: 85 },
+    { name: "AI Principles", level: 80 },
+    { name: "Tech-Savvy Solutions", level: 85 },
+    { name: "CRM Systems", level: 88 },
   ],
   business: [
-    { name: "Business Development", level: 88 },
-    { name: "Market Analysis", level: 85 },
-    { name: "Go-to-Market Strategy", level: 85 },
-    { name: "Revenue Growth Planning", level: 90 },
-    { name: "Territory Management", level: 85 },
+    { name: "Business Development", level: 90 },
+    { name: "Go-to-Market Strategy", level: 88 },
+    { name: "Revenue Growth Planning", level: 92 },
+    { name: "Strategic Planning", level: 88 },
+    { name: "Pipeline Management", level: 90 },
+    { name: "Performance Metrics", level: 85 },
   ],
 };
 
@@ -59,12 +61,12 @@ const Skills = () => {
           className="mb-12"
         >
           <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-6">
-            My Skills
+            Professional Skills & Expertise
           </h1>
-          <p className="text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto">
-            With over 12 years in sales and a strong focus on technology integration, I've developed a diverse
-            skill set spanning sales expertise, technical knowledge, and business strategy. Here's an overview
-            of my professional capabilities.
+          <p className="text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto">
+            With over 7 years of proven sales excellence and expertise in AI & technology integration, I've developed 
+            a comprehensive skill set spanning advanced sales processes, analytical problem-solving, and strategic business development. 
+            My unique combination of data-driven thinking and consultative selling has consistently delivered results exceeding 160% of quota targets.
           </p>
         </motion.div>
 
@@ -77,8 +79,8 @@ const Skills = () => {
             viewport={{ once: true }}
             className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
           >
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
-              Sales Skills
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 pb-2 border-b border-blue-200 dark:border-blue-700">
+              Sales Excellence
             </h2>
             <div>
               {skillsData.sales.map((skill, index) => (
@@ -95,8 +97,8 @@ const Skills = () => {
             viewport={{ once: true }}
             className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
           >
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
-              Technical Skills
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 pb-2 border-b border-blue-200 dark:border-blue-700">
+              Analytical & Technical
             </h2>
             <div>
               {skillsData.technical.map((skill, index) => (
@@ -113,8 +115,8 @@ const Skills = () => {
             viewport={{ once: true }}
             className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md lg:col-span-1 md:col-span-2"
           >
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
-              Business Strategy
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 pb-2 border-b border-blue-200 dark:border-blue-700">
+              Strategic Leadership
             </h2>
             <div>
               {skillsData.business.map((skill, index) => (
@@ -202,24 +204,24 @@ const Skills = () => {
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
-                College Education
+                Business Education & Athletics
               </h3>
               <p className="text-blue-600 dark:text-blue-400 mb-4">
                 Mesa Community College, 2010-2012
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                Studies focused on business and communications, providing a foundation for a successful sales career.
+                Business/Commerce studies with scholarship collegiate baseball. Ranked #3 in Nation (2012), NJCAA Baseball World Champions (2014) as Volunteer Assistant Coach.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
-                Professional Development
+                AI & Technology Focus
               </h3>
               <p className="text-blue-600 dark:text-blue-400 mb-4">
-                Ongoing Learning
+                Emerging Technologies
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                Continuous professional development in AI, sales methodologies, and business strategy through workshops, online courses, and industry conferences.
+                Keen interest in AI and emerging technologies. Staying current with latest trends in AI application for sales and customer engagement, leveraging technology to drive performance optimization.
               </p>
             </div>
           </div>

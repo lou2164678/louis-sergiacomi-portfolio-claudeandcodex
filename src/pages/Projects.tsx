@@ -88,11 +88,12 @@ const Projects = () => {
           className="mb-12"
         >
           <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-6">
-            My Projects
+            Professional Portfolio
           </h1>
-          <p className="text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto">
-            Here's a selection of my current projects focused on AI integration in sales, marketing,
-            and customer success. Each project represents innovative solutions to modern business challenges.
+          <p className="text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto">
+            Current strategic initiatives and AI implementation projects I'm developing to drive revenue growth 
+            and optimize sales processes. Each project leverages my 7+ years of sales experience combined with 
+            analytical thinking and emerging technology integration.
           </p>
         </motion.div>
 
