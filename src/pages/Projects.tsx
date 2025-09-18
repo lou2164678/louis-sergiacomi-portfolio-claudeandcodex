@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { projectsData, getProjectCategories } from "../data/projects";
 
 // Categories for filtering (derived from data)
@@ -103,15 +103,15 @@ const Projects = () => {
                     to={`/projects/${project.id}`}
                     className="flex items-center text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
                   >
-                    <FaGithub className="mr-2" /> View Details
+                    Read Overview
                   </Link>
                   <a
-                    href={project.liveUrl}
+                    href={project.livePath}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
                   >
-                    <FaExternalLinkAlt className="mr-2" /> Live Demo
+                    <FaExternalLinkAlt className="mr-2" /> Launch App
                   </a>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import type { CompanyBrief } from '../types';
+import { withBasePath } from '../../../../lib/routes';
 
 export type ValidationIssue = { path: string; message: string };
 
@@ -19,7 +20,7 @@ export const generateCompanyBrief = async (companyName: string, apiKey?: string)
   }
 
   try {
-    const res = await fetch('/api/generate-brief', {
+    const res = await fetch(withBasePath('/api/generate-brief'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) },
       body: JSON.stringify({ companyName })

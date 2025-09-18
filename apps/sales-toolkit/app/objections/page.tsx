@@ -3,6 +3,7 @@ import { useState } from 'react'
 import TwoPane from '../../components/TwoPane'
 import CopyButton from '../../components/CopyButton'
 import ApiKeyBar from '../../components/ApiKeyBar'
+import { withBasePath } from '../../lib/routes'
 
 export default function ObjectionsPage() {
   const [files, setFiles] = useState<File[]>([])
@@ -25,10 +26,10 @@ export default function ObjectionsPage() {
       if (files.length) {
         const fd = new FormData()
         for (const f of files) fd.append('files', f)
-        const res = await fetch('/api/objections/index', { method: 'POST', headers: { ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: fd })
+        const res = await fetch(withBasePath('/api/objections/index'), { method: 'POST', headers: { ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: fd })
         const data = await res.json(); setIndexResult(data); if (!res.ok) setError(data?.error || 'Index failed'); setDocs(data?.docs || [])
       } else {
-        const res = await fetch('/api/objections/index', { method: 'POST', headers: { 'content-type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: JSON.stringify({ files: [] }) })
+        const res = await fetch(withBasePath('/api/objections/index'), { method: 'POST', headers: { 'content-type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: JSON.stringify({ files: [] }) })
         const data = await res.json(); setIndexResult(data); if (!res.ok) setError(data?.error || 'Index failed'); setDocs(data?.docs || [])
       }
     } catch (e: any) { setError(e?.message || 'Network error') } finally { setIndexing(false) }
@@ -37,17 +38,17 @@ export default function ObjectionsPage() {
   const ask = async () => {
     setAsking(true); setError(''); setAskResult(null)
     try {
-      const res = await fetch('/api/objections/ask', { method: 'POST', headers: { 'content-type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: JSON.stringify({ question }) })
+      const res = await fetch(withBasePath('/api/objections/ask'), { method: 'POST', headers: { 'content-type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: JSON.stringify({ question }) })
       const data = await res.json(); setAskResult(data); if (!res.ok) setError(data?.error || 'Ask failed')
     } catch (e: any) { setError(e?.message || 'Network error') } finally { setAsking(false) }
   }
 
   const loadSample = async () => {
     setIndexResult(null); setAskResult(null); setError('')
-    const r = await fetch('/api/samples/objections')
+    const r = await fetch(withBasePath('/api/samples/objections'))
     const d = await r.json()
     if (!r.ok) { setError(d?.error || 'Failed to load sample'); return }
-    const res = await fetch('/api/objections/index', { method: 'POST', headers: { 'content-type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: JSON.stringify({ docs: d.docs }) })
+    const res = await fetch(withBasePath('/api/objections/index'), { method: 'POST', headers: { 'content-type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: JSON.stringify({ docs: d.docs }) })
     const data = await res.json(); setIndexResult(data); if (!res.ok) setError(data?.error || 'Index failed'); setDocs(data?.docs || [])
   }
 

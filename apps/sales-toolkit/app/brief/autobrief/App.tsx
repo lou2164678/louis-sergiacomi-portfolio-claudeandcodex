@@ -4,6 +4,7 @@ import { generateCompanyBrief, ServiceError, type ValidationIssue } from './serv
 import Loader from './components/Loader';
 import JsonDisplay from './components/JsonDisplay';
 import ApiKeyBar from '../../../components/ApiKeyBar';
+import { withBasePath } from '../../../lib/routes';
 
 const App: React.FC = () => {
     const [companyName, setCompanyName] = useState<string>('');
@@ -46,7 +47,7 @@ const App: React.FC = () => {
         if (!briefData) return
         setSaving(true); setSavedMsg(null)
         try {
-            const res = await fetch('/api/brief/save', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ brief: briefData }) })
+            const res = await fetch(withBasePath('/api/brief/save'), { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ brief: briefData }) })
             const data = await res.json()
             if (!res.ok) throw new Error(data?.error || 'Save failed')
             setSavedMsg(`Saved (id: ${data.id})`)

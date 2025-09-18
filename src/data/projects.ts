@@ -7,130 +7,81 @@ export type Project = {
   technologies: string[];
   features: string[];
   image: string;
-  githubUrl: string;
-  liveUrl: string;
+  livePath: string;
 };
 
 export const projectsData: Project[] = [
   {
     id: 1,
-    title: "AI in Sales Playbook",
-    category: "AI Development",
+    title: "AI Sales Toolkit Platform",
+    category: "Sales Enablement",
     description:
-      "A comprehensive guide that outlines strategies, tools, and best practices for integrating AI technologies into sales processes for enhanced performance and customer engagement.",
+      "Unified workspace that brings together AI-powered battlecards, discovery tools, and revenue insights for high-performing GTM teams.",
     longDescription:
-      "The AI in Sales Playbook is a detailed framework that helps sales teams leverage artificial intelligence to optimize their sales processes, enhance customer engagement, and drive better results. This playbook covers everything from the basics of AI in sales to advanced implementation strategies for different sales methodologies. It includes case studies, practical examples, and step-by-step guides for integrating AI tools into existing sales workflows.",
-    technologies: ["AI/ML", "Sales Strategy", "Process Optimization", "Predictive Analytics"],
+      "The AI Sales Toolkit is a full-stack platform I designed to showcase how modern revenue teams can operationalize generative AI. Built with a Next.js app that lives alongside this portfolio, it centralizes competitive battlecards, meeting prep insights, and objection handling intelligence in one environment. Recruiters can launch the app directly from my portfolio to experience the workflow I envision for AI-assisted sellers.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI APIs", "Edge Functions"],
     features: [
-      "Comprehensive AI integration strategies for sales teams",
-      "Customizable AI-powered sales workflows",
-      "Performance metrics and analytics dashboards",
-      "Lead scoring and prioritization algorithms",
-      "Automated follow-up and engagement systems",
+      "Modular app architecture with dedicated workspaces for briefs, ICP scoring, and objection handling",
+      "API layer built around OpenAI and vector search helpers for real-time enablement",
+      "Responsive UI optimized for sales reps on the go",
+      "Deployable as a standalone product but linked directly from my portfolio",
     ],
     image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    livePath: "/apps/sales-toolkit",
   },
   {
     id: 2,
-    title: "AI in Marketing Playbook",
-    category: "AI Development",
+    title: "Autobrief Generator",
+    category: "AI Workflow Automation",
     description:
-      "Strategic framework for marketing teams to implement AI-powered solutions for campaign optimization, customer segmentation, and personalized messaging at scale.",
+      "Creates tailored discovery briefs by blending uploaded collateral with live market intelligence in seconds.",
     longDescription:
-      "The AI in Marketing Playbook provides marketing professionals with comprehensive guidance on implementing artificial intelligence solutions to enhance campaign performance, automate repetitive tasks, and deliver personalized customer experiences at scale. This playbook covers various AI applications in marketing, from customer segmentation and targeting to content creation and optimization. It includes practical implementation strategies, tool recommendations, and metrics for measuring success.",
-    technologies: ["AI/ML", "Marketing Automation", "Customer Insights", "Performance Analytics"],
+      "The Autobrief Generator is a focused experience within the AI Sales Toolkit that demonstrates how I bridge sales methodology with AI orchestration. Users can explore how a rep uploads call notes, enriches them with third-party research, and produces a structured brief ready for outreach. The flow highlights prompt engineering, data sanitation, and guardrails I use when shipping AI into revenue orgs.",
+    technologies: ["Next.js App Router", "Server Actions", "OpenAI", "TypeScript"],
     features: [
-      "AI-powered customer segmentation models",
-      "Automated content personalization frameworks",
-      "Predictive campaign performance analytics",
-      "Cross-channel marketing optimization",
-      "Sentiment analysis and brand monitoring tools",
+      "Step-by-step interface guiding reps through input, enrichment, and output",
+      "Server-side streaming responses to keep the UI responsive",
+      "Reusable prompt templates that encode MEDDIC-style discovery criteria",
+      "Download-ready summaries built for executive readouts",
     ],
     image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    livePath: "/apps/sales-toolkit/brief",
   },
   {
     id: 3,
-    title: "AI in Customer Success Playbook",
-    category: "AI Development",
+    title: "ICP Scoring Studio",
+    category: "Revenue Intelligence",
     description:
-      "Innovative approaches to leveraging AI for proactive customer support, churn prediction, and personalized customer journey optimization to enhance retention and satisfaction.",
+      "Interactive scoring engine that visualizes how closely a target account maps to the ideal customer profile.",
     longDescription:
-      "The AI in Customer Success Playbook offers a comprehensive approach to implementing artificial intelligence solutions for enhancing customer retention, satisfaction, and lifetime value. This playbook explores how AI can transform customer success operations by enabling proactive support, identifying churn risks before they materialize, and creating personalized customer journeys. It includes implementation frameworks, tool recommendations, and best practices for measuring customer health and success.",
-    technologies: ["AI/ML", "Customer Experience", "Retention Strategy", "Support Automation"],
+      "ICP Scoring Studio showcases my approach to translating messy customer data into actionable segmentation. Inside the Sales Toolkit, the experience allows visitors to upload sample account CSVs, trigger heuristic scoring, and review AI-generated positioning guidance. It ties together sales strategy and technical execution for data-driven prospecting.",
+    technologies: ["TypeScript", "Next.js", "CSV Parsing", "Embedding Models"],
     features: [
-      "Predictive churn analysis and prevention frameworks",
-      "AI-powered customer health scoring",
-      "Automated support escalation systems",
-      "Personalized customer journey mapping",
-      "Voice of customer analysis tools",
+      "Weighted scoring framework with configurable heuristics",
+      "Embeddings-backed similarity checks for qualitative signals",
+      "Downloadable output that mirrors what I build for GTM leadership",
+      "Clear guardrails around data privacy and API usage",
     ],
     image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    livePath: "/apps/sales-toolkit/icp",
   },
   {
     id: 4,
-    title: "SaaS Sales Acceleration Model",
-    category: "Sales Strategy",
+    title: "Objection Handling Coach",
+    category: "Conversation Intelligence",
     description:
-      "A data-driven framework for optimizing the SaaS sales pipeline, from lead generation to customer conversion, utilizing AI to identify high-value opportunities and improve win rates.",
+      "Coaching console that turns recorded objections into dynamic responses rooted in real customer wins.",
     longDescription:
-      "The SaaS Sales Acceleration Model is a comprehensive framework designed to optimize the entire sales pipeline for software-as-a-service businesses. This model leverages data analytics and artificial intelligence to identify high-potential leads, accelerate deal velocity, and improve conversion rates. It includes strategies for each stage of the sales funnel, from initial lead generation to closing and expansion, with a focus on maximizing efficiency and results.",
-    technologies: ["SaaS", "Data Analytics", "AI Integration", "Pipeline Optimization"],
+      "The Objection Handling Coach is my take on bringing conversation intelligence into the flow of work. Visitors can explore curated objection libraries, trigger AI-generated rebuttals, and capture follow-up actions. It demonstrates how I think about reinforcement learning loops for GTM teams and the operational rigor needed to keep messaging on-brand.",
+    technologies: ["Next.js", "OpenAI", "Sales Playbooks", "Tailwind CSS"],
     features: [
-      "AI-driven lead scoring and qualification",
-      "Sales velocity optimization strategies",
-      "Win/loss analysis frameworks",
-      "Opportunity prioritization models",
-      "Customer expansion playbooks",
+      "Predictive objection surfacing based on persona and stage",
+      "Guided responses that mix AI creativity with curated proof points",
+      "Copy-to-clipboard UX for rapid enablement",
+      "Extensible data model for future voice-of-customer ingestion",
     ],
     image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    id: 5,
-    title: "B2B Sales AI Assistant",
-    category: "AI Development",
-    description:
-      "A specialized AI assistant designed to support B2B sales teams by providing real-time market intelligence, competitive analysis, and personalized sales recommendations.",
-    longDescription:
-      "The B2B Sales AI Assistant is a cutting-edge tool that empowers sales professionals with real-time market intelligence, competitive insights, and personalized recommendations to enhance their performance. This AI assistant can analyze customer data, market trends, and competitive information to provide actionable insights during sales conversations. It includes features for meeting preparation, objection handling, and follow-up optimization to help sales teams close more deals more efficiently.",
-    technologies: ["AI/ML", "Natural Language Processing", "B2B Sales", "Real-time Analytics"],
-    features: [
-      "Real-time competitive intelligence",
-      "AI-powered objection handling suggestions",
-      "Personalized conversation guides",
-      "Meeting preparation and summary tools",
-      "Follow-up optimization and tracking",
-    ],
-    image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    id: 6,
-    title: "Revenue Growth Strategy",
-    category: "Sales Strategy",
-    description:
-      "A comprehensive revenue growth framework that integrates AI-driven insights to identify expansion opportunities, optimize pricing strategies, and enhance customer lifetime value.",
-    longDescription:
-      "The Revenue Growth Strategy is a holistic framework that helps businesses accelerate growth by leveraging artificial intelligence to identify untapped opportunities, optimize pricing strategies, and maximize customer lifetime value. This strategy integrates data from sales, marketing, customer success, and finance to create a unified approach to revenue optimization. It includes methodologies for market expansion, customer monetization, and predictive forecasting to drive sustainable growth.",
-    technologies: ["Revenue Strategy", "Growth Modeling", "AI Analytics", "Market Expansion"],
-    features: [
-      "AI-driven market opportunity identification",
-      "Dynamic pricing optimization models",
-      "Customer lifetime value enhancement strategies",
-      "Cross-sell and upsell recommendation engines",
-      "Predictive revenue forecasting",
-    ],
-    image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    livePath: "/apps/sales-toolkit/objections",
   },
 ];
 

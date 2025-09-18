@@ -3,6 +3,7 @@ import { useState } from 'react'
 import TwoPane from '../../components/TwoPane'
 import CopyButton from '../../components/CopyButton'
 import ApiKeyBar from '../../components/ApiKeyBar'
+import { withBasePath } from '../../lib/routes'
 
 type Competitor = { id: string; sourceType: 'url'|'text'|'file'; title?: string; raw: string }
 
@@ -40,7 +41,7 @@ export default function BattlecardPage() {
     setLoading(true); setError(''); setResult(null)
     try {
       const payload = { ourSummary, competitors, personas }
-      const res = await fetch('/api/battlecard/generate', { method: 'POST', headers: { 'content-type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: JSON.stringify(payload) })
+      const res = await fetch(withBasePath('/api/battlecard/generate'), { method: 'POST', headers: { 'content-type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: JSON.stringify(payload) })
       const data = await res.json(); setResult(data); if (!res.ok) setError(data?.error || 'Generation failed')
     } catch (e: any) { setError(e?.message || 'Network error') } finally { setLoading(false) }
   }

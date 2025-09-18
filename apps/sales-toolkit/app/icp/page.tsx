@@ -3,6 +3,7 @@ import { useState } from 'react'
 import TwoPane from '../../components/TwoPane'
 import CopyButton from '../../components/CopyButton'
 import ApiKeyBar from '../../components/ApiKeyBar'
+import { withBasePath } from '../../lib/routes'
 
 type Row = Record<string, string>
 
@@ -46,14 +47,14 @@ export default function ICPPage() {
         employees: r.employees ? Number(r.employees) : undefined,
         region: r.region || undefined,
       }))
-      const res = await fetch('/api/icp/score', { method: 'POST', headers: { 'content-type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: JSON.stringify({ rows: bodyRows }) })
+      const res = await fetch(withBasePath('/api/icp/score'), { method: 'POST', headers: { 'content-type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey } : {}) }, body: JSON.stringify({ rows: bodyRows }) })
       const data = await res.json(); setScored(data); if (!res.ok) setError(data?.error || 'Score failed')
     } catch (e: any) { setError(e?.message || 'Network error') } finally { setLoading(false) }
   }
 
   const loadSample = async () => {
     setError(''); setScored(null)
-    const res = await fetch('/api/samples/icp')
+    const res = await fetch(withBasePath('/api/samples/icp'))
     const data = await res.json()
     if (res.ok) setRows(data.rows)
     else setError(data?.error || 'Failed to load sample')
