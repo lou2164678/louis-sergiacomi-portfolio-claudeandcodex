@@ -1,0 +1,15 @@
+{
+  "industryAllow": ["SaaS", "eCommerce", "AI"],
+  "regionAllow": ["NA", "EMEA"],
+  "size": {
+    "min": 50,
+    "max": 5000
+  },
+  "techKeywords": ["Shopify", "Salesforce", "Snowflake", "Google Cloud"],
+  "weights": {
+    "industry": 40,
+    "size": 30,
+    "region": 10,
+    "tech": 20
+  }
+}

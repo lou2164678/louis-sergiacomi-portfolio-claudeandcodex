@@ -2,73 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { projectsData, getProjectCategories } from "../data/projects";
 
-// Project data (in a real app, this might come from an API or CMS)
-const projectsData = [
-  {
-    id: 1,
-    title: "AI in Sales Playbook",
-    category: "AI Development",
-    description: "A comprehensive guide that outlines strategies, tools, and best practices for integrating AI technologies into sales processes for enhanced performance and customer engagement.",
-    technologies: ["AI/ML", "Sales Strategy", "Process Optimization", "Predictive Analytics"],
-    image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    id: 2,
-    title: "AI in Marketing Playbook",
-    category: "AI Development",
-    description: "Strategic framework for marketing teams to implement AI-powered solutions for campaign optimization, customer segmentation, and personalized messaging at scale.",
-    technologies: ["AI/ML", "Marketing Automation", "Customer Insights", "Performance Analytics"],
-    image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    id: 3,
-    title: "AI in Customer Success Playbook",
-    category: "AI Development",
-    description: "Innovative approaches to leveraging AI for proactive customer support, churn prediction, and personalized customer journey optimization to enhance retention and satisfaction.",
-    technologies: ["AI/ML", "Customer Experience", "Retention Strategy", "Support Automation"],
-    image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    id: 4,
-    title: "SaaS Sales Acceleration Model",
-    category: "Sales Strategy",
-    description: "A data-driven framework for optimizing the SaaS sales pipeline, from lead generation to customer conversion, utilizing AI to identify high-value opportunities and improve win rates.",
-    technologies: ["SaaS", "Data Analytics", "AI Integration", "Pipeline Optimization"],
-    image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    id: 5,
-    title: "B2B Sales AI Assistant",
-    category: "AI Development",
-    description: "A specialized AI assistant designed to support B2B sales teams by providing real-time market intelligence, competitive analysis, and personalized sales recommendations.",
-    technologies: ["AI/ML", "Natural Language Processing", "B2B Sales", "Real-time Analytics"],
-    image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    id: 6,
-    title: "Revenue Growth Strategy",
-    category: "Sales Strategy",
-    description: "A comprehensive revenue growth framework that integrates AI-driven insights to identify expansion opportunities, optimize pricing strategies, and enhance customer lifetime value.",
-    technologies: ["Revenue Strategy", "Growth Modeling", "AI Analytics", "Market Expansion"],
-    image: "/placeholder.jpg",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-];
-
-// Categories for filtering
-const categories = ["All", "AI Development", "Sales Strategy", "Marketing", "Customer Success"];
+// Categories for filtering (derived from data)
+const categories = ["All", ...getProjectCategories()];
 
 const Projects = () => {
   const [filter, setFilter] = useState("All");
@@ -125,17 +62,17 @@ const Projects = () => {
               viewport={{ once: true }}
               className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
             >
-              <div className="bg-gray-200 dark:bg-gray-700 h-48 flex items-center justify-center">
-                <p className="text-gray-500 dark:text-gray-400">
-                  Project Image
-                </p>
-              </div>
+              <Link to={`/projects/${project.id}`} className="block">
+                <div className="bg-gray-200 dark:bg-gray-700 h-48 flex items-center justify-center">
+                  <p className="text-gray-500 dark:text-gray-400">Project Image</p>
+                </div>
+              </Link>
 
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                  <Link to={`/projects/${project.id}`} className="text-xl font-bold text-gray-800 dark:text-white hover:underline">
                     {project.title}
-                  </h3>
+                  </Link>
                   <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded">
                     {project.category}
                   </span>
@@ -162,14 +99,12 @@ const Projects = () => {
                 </div>
 
                 <div className="flex space-x-4">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to={`/projects/${project.id}`}
                     className="flex items-center text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
                   >
                     <FaGithub className="mr-2" /> View Details
-                  </a>
+                  </Link>
                   <a
                     href={project.liveUrl}
                     target="_blank"

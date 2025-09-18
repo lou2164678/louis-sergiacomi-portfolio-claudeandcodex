@@ -1,0 +1,17 @@
+[
+  {
+    "id": "doc1",
+    "title": "Pricing One-Pager",
+    "text": "Our pricing is value-based with tiers for SMB, MM, and ENT. Discounts apply for annual terms. Competitive vs enterprise bundles when factoring integration and time-to-value."
+  },
+  {
+    "id": "doc2",
+    "title": "Security & Compliance FAQ",
+    "text": "We support SSO, SCIM, SOC2 Type II, and provide audit logs. Enterprise customers can provision fine-grained roles."
+  },
+  {
+    "id": "doc3",
+    "title": "ROI Case Studies",
+    "text": "Customers report 25% faster onboarding and 15% lower total cost of ownership after consolidating tools with our platform."
+  }
+]
